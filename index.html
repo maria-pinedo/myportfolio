@@ -170,7 +170,7 @@
   .job li::marker{color:var(--gold-dim);}
 
   /* PROJECTS */
-  .project-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;}
+  .project-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px;}
   .project-card{
     background:var(--panel); border:1px solid var(--line);
     padding:26px 22px; display:flex; flex-direction:column; gap:12px;
@@ -183,6 +183,13 @@
   .project-metric{
     font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--gold-bright);
     border-top:1px solid var(--line); padding-top:10px; margin-top:4px;
+  }
+  .project-card.in-progress{border-style:dashed; border-color:var(--gold-dim);}
+  .project-card.in-progress .project-metric{color:var(--gold);}
+  .status-pill{
+    align-self:flex-start; font-family:'IBM Plex Mono', monospace; font-size:0.62rem;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--gold);
+    border:1px solid var(--gold-dim); padding:3px 9px;
   }
 
   /* SKILLS */
@@ -446,6 +453,19 @@
         <h3>E-Commerce Business Analysis</h3>
         <p>Segmented 100K+ transactions with SQL aggregate and window functions to surface top-performing revenue categories and recommend capital allocation.</p>
         <div class="project-metric">Health &amp; Beauty: $1.25M top category</div>
+      </div>
+      <div class="project-card">
+        <div class="tag">PYTHON · EDA &amp; REGRESSION</div>
+        <h3>Unicorn Companies Analysis</h3>
+        <p>Cleaned and analyzed a global dataset of unicorn startups, then ran a linear regression to test whether investor count predicts valuation.</p>
+        <div class="project-metric">US leads with 469 unicorns · fintech &amp; AI dominate</div>
+      </div>
+      <div class="project-card in-progress">
+        <span class="status-pill">In Progress</span>
+        <div class="tag" style="margin-top:10px;">PYTHON · NLP</div>
+        <h3>Resume-Job Matcher for International Students</h3>
+        <p>Building a word-matching and resume optimization tool that helps international students tailor applications to specific job postings and improve their match rate.</p>
+        <div class="project-metric">Currently in development</div>
       </div>
     </div>
   </div>
